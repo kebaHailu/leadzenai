@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TodoList App</title>
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="hero p-5">
+        <div class="container text-center">
+            <h1 class="display-2 ">Delete <span class='border border-danger'>{{ todo.title }}</span></h1>
+            <p class="lead">Are you sure you want to delete</p>
+        
+            <form method="POST" action="{% url 'delete-todo' todo.id %}">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+         
+            
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>
